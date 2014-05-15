@@ -1,0 +1,184 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>
+	<title>Predict The Super Bowl Outcome</title>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet"  href="css/reset.css" />
+	<link href="css/predictor.css" rel="stylesheet" />
+	
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<script src="js/teamdata.js"></script>
+	<script src="js/calculate.js"></script>
+</head>
+
+<body>
+	<h1>Predict the NFL Playoffs</h1>
+	<h3>Can you predict which teams will win each of the NFL conference title games? Choose stats on the left and rank them in the way you think will impact the games.</h3>
+	<div id="statsCon">
+		
+		<div id="statsAll" class="connectedSortable">
+			<p class="statsHead">Instructions</p>
+			<p class="instruct">1. Check the statistics you would like to include in the calculation</p>
+			<p class="instruct">2. Drag the slots up and down to give different weights to the statistics</p>
+			<div class="imp">MORE IMPORTANT</div>
+			<div id="sortableStats">
+				<div id="a9" class="dragger"><input type="checkbox" id="a9" class="statsCheck" onchange="cbChanged(this, 9);" checked="checked"><p>AFC / NFC</p></div>
+				<div id="a7"  class="dragger"><input type="checkbox" id="a7" class="statsCheck" onchange="cbChanged(this, 7);" checked="checked"><p>Seed</p></div>
+				<div id="a8"  class="dragger"><input type="checkbox" id="a8" class="statsCheck" onchange="cbChanged(this, 8);" checked="checked"><p>Wins</p></div>
+				<div id="a5"  class="dragger"><input type="checkbox" id="a5" class="statsCheck" onchange="cbChanged(this, 5);" checked="checked"><p>Points For</p></div>
+				<div id="a6"  class="dragger"><input type="checkbox" id="a6" class="statsCheck" onchange="cbChanged(this, 6);" checked="checked"><p>Points Against</p></div>
+				<div id="a0"  class="dragger"><input type="checkbox" id="a0" class="statsCheck" onchange="cbChanged(this, 0);"><p>Pass Offense</p></div>
+				<div id="a1"  class="dragger"><input type="checkbox" id="a1" class="statsCheck" onchange="cbChanged(this, 1);"><p>Pass Defense</p></div>
+				<div id="a2"  class="dragger"><input type="checkbox" id="a2" class="statsCheck" onchange="cbChanged(this, 2);"><p>Rush Offense</p></div>
+				<div id="a3"  class="dragger"><input type="checkbox" id="a3" class="statsCheck" onchange="cbChanged(this, 3);"><p>Rush Defense</p></div>
+				<div id="a4"  class="dragger"><input type="checkbox" id="a4" class="statsCheck" onchange="cbChanged(this, 4);"><p>Turnover Margin</p></div>
+			</div>
+			<div class="imp">LESS IMPORTANT</div>
+			<div id="shorts">
+				<p><a href="#" id="selectAll">Select all</a></p>
+				<p><a href="#" id="clearAll">Clear all</a></p>
+				<p><a href="#" id="reset">Start over</a></p>
+			</div>
+		</div>
+		
+	</div>
+
+<div id="matchups">		
+	<div id="mod0" class="module">
+		
+		<div class="main">
+			
+			<div class="team1 teamModule spacing">
+				<div class="teamInfo">
+					<img class="teamLogo" src="images/templogo.gif" />
+					<div class="teamInfoText">
+						<div class="cityName"></div>
+						<div class="teamName"></div>
+						<div class="teamData"></div>
+					</div>
+				</div>
+				<div class="teamStatsCon">
+					<div class="teamStat"><div class="teamStatTxt">Pass offense</div> <div class="passo teamStatNum"></div></div>
+					<div class="teamStat alt"><div class="teamStatTxt">Pass defense</div> <div class="passd teamStatNum"></div></div>
+					<div class="teamStat"><div class="teamStatTxt">Rush offense</div> <div class="rusho teamStatNum"></div></div>
+					<div class="teamStat alt"><div class="teamStatTxt">Rush defense</div> <div class="rushd teamStatNum"></div></div>
+					<div class="teamStat"><div class="teamStatTxt">TO margin</div> <div class="tomargin teamStatNum"></div></div>
+					<div class="teamStat alt"><div class="teamStatTxt">Points for</div> <div class="ptsfor teamStatNum"></div></div>
+					<div class="teamStat"><div class="teamStatTxt">Points against</div> <div class="ptsagainst teamStatNum"></div></div>
+				</div>
+				
+				<div class="calcCon">
+					<div class="numBox"></div>
+					<div class="numBoxLabel">win probability</div>
+				</div>
+			
+			</div>
+			
+			<div class="team2 teamModule">
+				<div class="teamInfo">
+					<img class="teamLogo" src="images/templogo.gif" />
+					<div class="teamInfoText">
+						<div class="cityName"></div>
+						<div class="teamName"></div>
+						<div class="teamData"></div>
+					</div>
+				</div>
+
+				<div class="teamStatsCon">
+					<div class="teamStat"><div class="teamStatTxt">Pass offense</div> <div class="passo teamStatNum"></div></div>
+					<div class="teamStat alt"><div class="teamStatTxt">Pass defense</div> <div class="passd teamStatNum"></div></div>
+					<div class="teamStat"><div class="teamStatTxt">Rush offense</div> <div class="rusho teamStatNum"></div></div>
+					<div class="teamStat alt"><div class="teamStatTxt">Rush defense</div> <div class="rushd teamStatNum"></div></div>
+					<div class="teamStat"><div class="teamStatTxt">TO margin</div> <div class="tomargin teamStatNum"></div></div>
+					<div class="teamStat alt"><div class="teamStatTxt">Points for</div> <div class="ptsfor teamStatNum"></div></div>
+					<div class="teamStat"><div class="teamStatTxt">Points against</div> <div class="ptsagainst teamStatNum"></div></div>
+				</div>
+				
+				<div class="calcCon">
+					<div class="numBox"></div>
+					<div class="numBoxLabel">win probability</div>
+				</div>
+
+			</div>
+			
+		</div>
+	
+		<div class="side">
+			<div class="sideContentTop">
+				<div class="datetime sideItem"></div>
+				<div class="line sideItem"></div>
+				
+			</div>
+			<div class="sideContentBottom">
+				<div class="sideItem"><span class="sideHeader">User Poll</span><br />Who do you think will win?</div>
+				<div id="">
+					<form id="form1" action="">
+						<input type="radio" name="" value="" onclick="" class="poll1" /> Team 1<br />
+						<input type="radio" name="" value="" onclick=""  class="poll2" /> Team 2
+						<input type="submit" value="Submit" id="mysubmitbtn">
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div style="clear:both"></div>
+		
+		<div id="exp" class="expertCon" style="border-top: 1px dotted #CCC; margin-top: 10px">
+			
+		<p class="desc">How it works: The predictor pairs each of this year's playoff teams with similar teams in each category. Based on which statistics are selected and how they are ranked, the predictor dynamically calculates a percentage chance of each team winning.</p>
+		<p class="desc">Based on the way the predictor operates, a team that fared better in one category than another will not necessarily be more likely to win. (For example, Team A may have passed for fewer yards than Team B, but teams that finished with a similar passing offense to Team A won more often.)</p>
+		<p class="desc">Data is pulled from conference title matchups dating back to the 1971 postseason.</p>
+		</div>
+
+	</div> <!--END MODULE-->
+
+	<div id="mod1" class="module">
+		
+		<div id="exp0" class="expertCon">
+			<p class="expertTitle">Why the Broncos will win</p>
+			<div class="expertText">
+				<p class="expertText"></p>
+			</div>
+		</div>
+		
+		<div id="exp1" class="expertCon">
+			<p class="expertTitle">Why the Seahawks will win</p>
+			<div class="expertText">
+				<p class="expertText"></p>
+			</div>
+		</div>
+
+	</div> <!--END MODULE-->
+
+	
+</div> <!--END MATCHUPS-->
+
+	<div style="clear:both"></div>
+
+	
+	
+	<div id="sourceCreds">
+		Credits: Peggy Bustamante, Nelson Hsu, Matt Walks / DFM
+	</div>
+
+	
+<script src="https://spreadsheets.google.com/feeds/list/0Apk83VzG7OVldHl3N0h0d0tDaV9Lb1BVbVNxRUlPQmc/od6/public/values?alt=json-in-script&amp;callback=loadGSContent" type="text/javascript"></script>
+
+<script src="https://spreadsheets.google.com/feeds/list/0Apk83VzG7OVldENrY3Uyel83VGlOUk5oNkNDeGlGblE/od6/public/values?alt=json-in-script&amp;callback=loadCalcData" type="text/javascript"></script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37303540-1'], ['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+	
+</body>
+
+</html>

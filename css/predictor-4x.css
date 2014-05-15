@@ -1,0 +1,95 @@
+body { margin: 10px; }
+h1 { font: bold 20px Arial; margin-bottom: 10px }
+h3 { font: 14px Arial; margin-bottom: 10px }
+.desc { font: 12px Arial; margin-top: 10px; color: #666;}
+
+#statsCon { width: 123px; float: left; margin-right: 5px; margin-top: 5px; height: 600px;  padding-right: 10px; position: fixed; }
+#statsCon .emptySlot { height: 25px; border: 1px dashed #CCC; margin-top: 2px; }
+#statsCon .emptySlot p { font: 10px Arial; color: #CCC; text-align: center; margin-top: 7px; }
+#statsCon .emptySlot-highlight { border: 1px dashed #000; }
+#statsCon #statsAll { margin-top: 10px; }
+#statsCon .statsCheck { float: left; position: relative; top: 4px; left: 3px; margin-right: 7px; }
+#statsCon .statsPlaceHolder { height: 25px; border: 1px solid #DDD; margin-top: 2px }
+#statsCon .statsHead { font-family: 'Open Sans Condensed', sans-serif; color: #000; font-size: 14px; margin: 0 0 5px 0; font-weight: bold; }
+#statsCon .instruct { font: italic 12px Arial; margin-bottom: 10px}
+#statsCon .imp { font: 10px Arial; color: #CCC;  margin-top: 4px; margin-left: 23px }
+#statsCon #shorts { margin-top: 5px; }
+#statsCon #shorts a { font: 11px Arial; color: #7ebee4; text-decoration: none; }
+
+#statsCon .dragger { 
+	height: 25px; border: 1px solid #DDD; margin-top: 2px; 
+	background-image: linear-gradient(bottom, rgb(236,236,236) 72%, rgb(226,226,226) 51%);
+	background-image: -o-linear-gradient(bottom, rgb(236,236,236) 72%, rgb(226,226,226) 51%);
+	background-image: -moz-linear-gradient(bottom, rgb(236,236,236) 72%, rgb(226,226,226) 51%);
+	background-image: -webkit-linear-gradient(bottom, rgb(236,236,236) 72%, rgb(226,226,226) 51%);
+	background-image: -ms-linear-gradient(bottom, rgb(236,236,236) 72%, rgb(226,226,226) 51%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.72, rgb(236,236,236)),
+		color-stop(0.51, rgb(226,226,226))
+	);
+	
+}
+#statsCon .dragger:hover { cursor: move; }
+#statsCon #a0,#a1,#a2,#a3,#a4,#a5,#a6,#a7,#a8,#a9 { position: relative;}
+
+.dragger p { font-family: 'Open Sans Condensed', sans-serif; color: #000; font-size: 12px; text-transform: uppercase; font-weight: bold; margin-top: 7px; text-shadow: 0.1em 0.1em #CCC }
+.dragger img { float: left; margin: 10px 5px 0 10px }
+
+.module { position: relative; width: 390px;  float: left; margin: 2px; border: 1px solid #e2e2e2; padding: 6px;}
+.module .main { width: 280px; float: left;} 
+.module .main .teamModule { width: 130px; float: left; }
+.module .main .spacing { margin-right: 20px; }
+.module .main .teamModule .teamInfo img { float: left; }
+.module .main .teamModule .teamInfoText { padding-left: 55px; }
+.module .main .teamModule .teamInfoText .cityName { font: 8px Arial; text-transform: uppercase; color: #666; }
+.module .main .teamModule .teamInfoText .teamName { font-family: 'Open Sans Condensed', sans-serif; color: #000; font-size: 18px; text-transform: uppercase; font-weight: bold; }
+.module .main .teamModule .teamInfoText .teamData { margin-top: 5px; font: 11px Arial; color: #333; }
+
+.module .main .teamModule .teamStatsCon { margin-top: 10px; }
+.module .main .teamModule .teamStatsCon .teamStat { font: 11px Arial; color: #666; padding: 3px; background-color: #f1f1f1; border-radius: 3px }
+.module .main .teamModule .teamStatsCon .alt {  background-color: #FFF; }
+.main .teamModule .teamStatsCon .teamStatNum { font-weight: bold; }
+.main .teamModule .teamStatsCon .teamStatTxt { float: left; width: 85px;}
+
+.main .teamModule .calcCon {  margin-top: 20px; }
+.main .teamModule .calcCon .numBox { width: 72px; height: 40px; border-radius: 5px; background-color: #333; color: #FFF; font: bold 30px Arial; text-align: center; padding-top: 5px; float: left; margin-right: 5px;}
+.main .teamModule .calcCon .numBoxLabel { font: 10px Arial; color: #999; padding-top: 8px;}
+
+.module .side { width: 98px; float: right; height: 100%; font: 11px Arial; color: #FFF; line-height: 1.3em }
+.module .side .sideContentTop { padding: 10px; background: #333; height: 250px;}
+.module .side .sideContentBottom { padding: 10px; background: #666; display: none;}
+/*.module .side .sideContentTop { padding: 10px; background: #333; height: 260px;}
+.module .side .sideContentBottom { padding: 10px; background: #666; display: none;}*/
+.module .side .sideContentBottom .pollBar { height: 12px; background-color: #6d8e5e; margin-bottom: 6px; font: 11px Arial; color: #FFF; padding: 1px 0 1px 2px; }
+.module .side .sideContentBottom .pollTeam { margin-bottom: 1px;}
+.module .side .sideItem { margin-bottom: 10px; }
+.module .side .sideItem a { font-weight: bold; color: #99CCFF; text-decoration: none;}
+.module .side .sideHeader { font-family: 'Open Sans Condensed', sans-serif; color: #CCC; font-size: 12px; text-transform: uppercase; font-weight: bold; }
+.module .side #mysubmitbtn { margin-top: 10px; }
+
+.module .expertCon { position: absolute; top: 80px; background-color: #333; width: 290px; height: 208px; }
+.module .expertCon .expertText { padding:10px; }
+.module .expertCon .expertText p {  color: #FFF; font: 12px Arial; line-height: 1.3em}
+.module .expertCon .expertText .expertHead {  color: #EEE; font: bold 15px Arial; }
+.module .expertCon .expertText .expertBy {  color: #EEE; font: italic 12px Arial; margin-bottom: 10px }
+
+/*#mod0 { margin-right: 10px; border-bottom: 2px solid #000; padding: 0 1px 1px 0; border-right: 2px solid #000; }
+#mod1 { border-bottom: 2px solid #000; padding: 0 0 1px 0;  }
+#mod2 { margin-right: 10px; padding: 0 1px 0 0; border-right: 2px solid #000;}*/
+#mod1, #mod3 {  margin-right: 0px; }
+
+#matchups {margin-left: 140px}
+
+#sourceCreds {
+	font: italic 11px Arial; 
+	color: #999; 
+	margin: 10px 0 10px 0px; 
+	border-top: 1px solid #e2e2e2; 
+	padding: 5px 0 0 0;
+}
+
+
