@@ -216,20 +216,6 @@ function loadGSContent(gsData) {
 								team2logo: gsData.feed.entry[i].gsx$team2logo.$t
 						    }];
 		
-		//COUNT GAMES PER DAY
-		/*
-		if (i > 0) {
-			if (gsData.feed.entry[i].gsx$dateformatted.$t == gsData.feed.entry[i-1].gsx$dateformatted.$t) {
-				tmpCount ++;
-				dailygames[tmpIndex] = tmpCount;
-			} else {
-				tmpIndex ++;
-				tmpCount = 1;
-				dailygames[tmpIndex] = 1;
-			}
-		}
-		*/
-		
 	}
 	//bowlgamesInit();
 }
