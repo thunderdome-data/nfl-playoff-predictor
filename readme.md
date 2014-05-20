@@ -3,10 +3,12 @@ NFL Playoff Predictor
 
 What is this?
 -------------
-Compare NFL playoff teams using rankable stats and see who'll win. 
-demos: 
+Compare NFL playoff teams using rankable stats and see who'll win. This app from the 2013 playoffs later laid the groundwork for our [Bracket Advisor](https://github.com/thunderdome-data/bracket-advisor) March Madness game.
+Live demos: 
 http://extras.twincities.com/elections/predictor/index.html
 http://extras.twincities.com/elections/predictor4x/index.html
+
+![screenshot](screenshots/nflplayoffs.png)
 
 Credits
 ---------
